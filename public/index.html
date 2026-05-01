@@ -38,6 +38,25 @@
 
     });
 
+
+        window.addEventListener('load', async()=>{
+            const response = await fetch('/checkboxes',{method: 'GET'})
+            const data = await response.json()
+            if(data && data.checkboxes){{
+                data.checkboxes.forEach((checked,index)=>{
+                    const input = document.createElement('input');
+                    input.type = 'checkbox';
+                    input.id = `checkbox-${index}`
+
+                 
+                })
+            }
+           
+            }
+          
+        })
+
+
         new Array(CHECKBOX_COUNT).fill(null).forEach((_, index)=>{
             const input = document.createElement('input');
             input.type = 'checkbox';
